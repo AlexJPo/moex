@@ -93,6 +93,9 @@ public class MoexService {
                         if (result1 == null) {
                             GCurveModel curve = setCurveData();
                             services.addCurve(curve);
+                        } else {
+                            GCurveModel curve = setCurveData();
+                            services.updateCurve(curve);
                         }
                     }
                 } catch (IOException | UnsupportedOperationException e) {

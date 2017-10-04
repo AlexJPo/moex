@@ -7,13 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface IGCurveRepository extends JpaRepository<GCurveModel, Long>{
-  /*  void addCurve(GCurveModel curve);
-
-    void updateCurve(GCurveModel curve);
-
-    List<GCurveModel> getAll();
-*/
+public interface IGCurveRepository extends JpaRepository<GCurveModel, Long> {
     @Query("SELECT c FROM GCurveModel c WHERE c.tradedate = :date")
     GCurveModel findCurveByDate(@Param("date") String date);
 }
